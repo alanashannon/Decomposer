@@ -31,8 +31,8 @@ document.querySelector('.test-button2').addEventListener('click', async () => {
         synth.triggerAttackRelease(note, 1, time);
     }, [...arr]).start(0); 
     console.log(arr)
-    Tone.Transport.start();
 
+    Tone.Transport.start();
     console.log('audio is ready')
 })
 
