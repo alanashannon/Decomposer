@@ -5,6 +5,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const tiles = document.querySelectorAll('.tile');
     console.log(tiles)
     let soundArr = [];
+    // sound when clicking on tiles, push to soundArr
     (function populateSoundArr() {
         for (let i = 0; i < tiles.length; i++) {
             tiles[i].addEventListener('click', async () => {
@@ -102,5 +103,6 @@ window.addEventListener('DOMContentLoaded', () => {
             console.log('tile clicked')
         })
     }) 
+
+    
 })
-console.log("New Project!")
