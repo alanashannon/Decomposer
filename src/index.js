@@ -4,6 +4,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     const tiles = document.querySelectorAll('.tile');
     console.log(tiles)
+
     let soundArr = [];
     // sound when clicking on tiles, push to soundArr
     (function populateSoundArr() {
@@ -13,59 +14,22 @@ window.addEventListener('DOMContentLoaded', () => {
                 Tone.loaded().then(() => {
                     sound.start();
                     soundArr.push(sound);
-                    // console.log(soundArr);
                 })
             })
         }
-        // return soundArr;
     })();
     
     (function playSoundArr() {
-        for (let i = 0; i < tiles.length; i++) {
-            let sound = new Tone.Player(`./dist/dvorak/sample_0${i + 1}.wav`).toDestination(); 
-            document.querySelector('.play').addEventListener('click', async () => {
-                console.log(soundArr)
-                // Tone.loaded().then(() => {
-                //     const seq = new Tone.Sequence((time, note) => {
-                //         sound.triggerAttackRelease(note, 1, time); 
-                //     }, [...soundArr]).start(0); 
-                    
-                // })
-                // Tone.Transport.start()
-                soundArr.forEach(clip => {
-                    Tone.loaded().then(() => {
-                        clip.start(); 
-                    })
+        document.querySelector('.play').addEventListener('click', async () => {
+            const seq = new Tone.Sequence((time, note) => {
+                Tone.loaded().then(() => {
+                    Tone.Transport.bpm.value = 17.5;
+                    note.start();
                 })
-            })
-        }
-    })()
-    
-    // document.querySelector('.play').addEventListener('click', async () => {
-    //     for (let i = 0; i < tiles.length; i++) {
-    //         let sound = new Tone.Player(`./dist/dvorak/sample_0${i+1}.wav`).toDestination();
-    //         // let sound = new Tone.Synth().toDestination(); 
-    //         console.log(soundArr)
-    //         const seq = new Tone.Sequence((time, note) => {
-    //             sound.triggerAttackRelease(note, 1, time);
-    //         }, [...soundArr]).start(0); 
-    //         Tone.Transport.start(); 
-    //     }
-    //     console.log('audio is ready')
-    // })
-        // const seq = new Tone.Sequence((time, note) => {
-        //     synth.triggerAttackRelease(note, 1, time);
-        // }, [...arr]).start(0); 
-        // console.log(arr)
-
-        // let sound = new Tone.Player(`./dist/dvorak/sample_01.wav`).toDestination();
-        // Tone.loaded().then(() => {
-        //     sound.start(); 
-        // })
-
-    // const seq = new Tone.Sequence((time, note) => {
-    //     sound.triggerAttackRelease(note, 1, time);
-    // }, [...soundArr]).start(0); 
+            }, [...soundArr]).start(0); 
+            Tone.Transport.start();
+        })
+    })();
 
     const stopButton = document.querySelector('.stop-button'); 
     stopButton.addEventListener('click', () => {
