@@ -19,20 +19,24 @@ document.querySelector('.test-button2').addEventListener('click', async () => {
         // synth.triggerRelease(["D4", "F#4", "A4"], now + 3);
         // synth.triggerRelease(arr, now + 3);
         
-    const synth = new Tone.Synth().toDestination(); 
-    const D4 = "D4"
-    const FS4 = "F#4"
-    const A4 = "A4"
-    let arr = []; 
-    arr.push(D4); 
-    arr.push(FS4); 
-    arr.push(A4); 
-    const seq = new Tone.Sequence((time, note) => {
-        synth.triggerAttackRelease(note, 1, time);
-    }, [...arr]).start(0); 
-    console.log(arr)
+    // const synth = new Tone.Synth().toDestination(); 
+    // const D4 = "D4"
+    // const FS4 = "F#4"
+    // const A4 = "A4"
+    // let arr = []; 
+    // arr.push(D4); 
+     
+    // const seq = new Tone.Sequence((time, note) => {
+    //     synth.triggerAttackRelease(note, 1, time);
+    // }, [...arr]).start(0); 
+    // console.log(arr)
 
-    Tone.Transport.start();
+    // Tone.Transport.start();
+
+    let sound = new Tone.Player(`./dist/dvorak/sample_01.wav`).toDestination();
+    Tone.loaded().then(() => {
+        sound.start(); 
+    })
     console.log('audio is ready')
 })
 
