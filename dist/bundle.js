@@ -626,7 +626,7 @@ window.addEventListener('DOMContentLoaded', () => {
     document.querySelector('.play').addEventListener('click', async () => {
       const seq = new tone__WEBPACK_IMPORTED_MODULE_0__.Sequence((time, note) => {
         tone__WEBPACK_IMPORTED_MODULE_0__.loaded().then(() => {
-          tone__WEBPACK_IMPORTED_MODULE_0__.Transport.bpm.value = 17.5;
+          tone__WEBPACK_IMPORTED_MODULE_0__.Transport.bpm.value = 18;
           note.start(time);
         });
       }, [...soundArr]).start();

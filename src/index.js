@@ -74,7 +74,7 @@ window.addEventListener('DOMContentLoaded', () => {
         document.querySelector('.play').addEventListener('click', async () => {
             const seq = new Tone.Sequence((time, note) => {
                 Tone.loaded().then(() => {
-                    Tone.Transport.bpm.value = 17.5;
+                    Tone.Transport.bpm.value = 18;
                     note.start(time);
                 })
             }, [...soundArr]).start(); 
