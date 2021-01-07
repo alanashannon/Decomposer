@@ -15,3 +15,9 @@ span, article, footer, time, small {
   box-sizing: inherit;
   background: inherit;
 }
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}

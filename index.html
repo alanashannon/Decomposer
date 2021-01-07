@@ -6,6 +6,10 @@
     <script type="text/javascript" src="./dist/bundle.js"></script>
     <link rel="stylesheet" type="text/css" href="./src/styles/index.css" />
     <link rel="stylesheet" type="text/css" href="./src/styles/reset.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
+        integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous" />
     <title>Decomposer</title>
 </head>
 
@@ -13,7 +17,7 @@
     <div class="whole-page">
         <div>
             <div class="header-bar">
-                <h1>Decomposer</h1>
+                <h1>DECOMPOSER</h1>
             </div>
         </div>
     
@@ -31,12 +35,17 @@
         </div>
         <div class="button-parent">
             <div class="buttons">
-                <button class="play">Play</button>
-                <button class="stop-button">Stop</button>
-                <button class="clear-button">Clear</button>
+                <button class="play"><i class="fas fa-play-circle"></i></button>
+                <button class="stop-button"><i class="fas fa-stop-circle"></i></button>
+                <button class="clear-button"><i class="fas fa-trash"></i></button>
+                <label for="piece-toggle">Select a piece:</label>
+                <div class="selector">
+                    <select class="piece-toggle" id="piece-toggle">
+                        <option value="dvorak">Dvorak Symphony No. 9</option>
+                    </select>
+                </div>
             </div>
         </div>
-        </br>
         <div class="board-parent">
             <div class="board" id="board">
                 <div class="staff-starter" id="staff-starter"><img src="./dist/tile_imgs/staff_starter.png" alt=""></div>

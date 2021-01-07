@@ -15,7 +15,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
     const clearButton = document.body.querySelector('.clear-button'); 
     clearButton.addEventListener('click', async () => {
-        console.log('clear button')
         tiles.forEach(tile => {
             if (tile.style.visibility === 'hidden') {
                 tile.style.visibility = 'visible'
@@ -24,7 +23,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
         while (board.childNodes.length > 3) {
             board.removeChild(board.lastChild)
-            console.log(board.childNodes)
         }
         soundArr = []; 
     }); 
