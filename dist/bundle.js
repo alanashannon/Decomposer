@@ -561,7 +561,6 @@ window.addEventListener('DOMContentLoaded', () => {
     const stopButton = document.querySelector('.stop-button');
     stopButton.addEventListener('click', () => {
       tone__WEBPACK_IMPORTED_MODULE_0__.Transport.stop();
-      console.log("stopping");
     });
   })();
 

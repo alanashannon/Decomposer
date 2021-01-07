@@ -9,7 +9,6 @@ window.addEventListener('DOMContentLoaded', () => {
         const stopButton = document.querySelector('.stop-button'); 
         stopButton.addEventListener('click', () => {
             Tone.Transport.stop(); 
-            console.log("stopping")
         })
     })(); 
 

@@ -1,5 +1,4 @@
 .whole-page {
-    /* background-color: black; */
     background-color: rgb(26, 27, 31);
     color: ghostwhite; 
 }
@@ -7,35 +6,56 @@
 .header-bar {
     display: flex; 
     justify-content: center;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid rgb(20, 20, 20);
     padding-top: 20px;
     padding-bottom: 20px;
     margin-bottom: 50px;
     background-color: rgb(39, 39, 39);
-
 }
 
-.header-bar h1 {
+.header-bar .header-first {
     font-family: 'Pirata One', cursive;
     font-size: 35px;
+    color: rgb(156, 2, 2); 
+}
+
+.header-bar .header-second {
+    font-family: 'Pirata One', cursive;
+    font-size: 35px;
+    color: gray; 
+}
+
+.directions  {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 30px; 
+}
+
+.directions h2 {
+    display: flex;
+    justify-content: center;
+    font-size: 16px; 
+    font-weight: lighter; 
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: lightgray; 
 }
 
 .board-parent {
     display: flex; 
     justify-content: center;
     padding-bottom: 100%;
+
 }
 
 .board {
     display: flex; 
     flex-direction: row;
-    /* justify-content: center; */
-    /* background-color: rgb(10, 12, 32); */
     background-color: rgb(39, 39, 39);
     width: 700px;
     height: 60px; 
-    border: 1px solid black;
-    box-shadow: black;
+    border: 1px solid rgb(36, 35, 35);
+    background-color: rgb(39, 39, 39);
+    box-shadow: rgb(83, 80, 80) 0px 1px 10px 0px;
     border-radius: 8px;
     padding: 20px; 
 }
@@ -46,11 +66,10 @@
     align-items: center;
     flex-wrap: wrap;
     width: 410px; 
-    /* border: 1px solid lightgray;  */
-    border: 1px solid black;
+    border: 1px solid rgb(36, 35, 35);
     background-color: rgb(39, 39, 39);
-
-    /* background-color: rgb(10, 12, 32); */
+    box-shadow: rgb(83, 80, 80) 0px 1px 10px 0px;
+/* rgb(48, 44, 44) */
     border-radius: 8px;
     padding: 20px; 
 }
@@ -58,13 +77,11 @@
 .tile-outer {
     display: flex; 
     justify-content: center;
-    /* border: 1px solid red;  */
 }
 
 .tile img {
     width: 80px; 
     height: 60px; 
-    /* border: 1px solid lightgray;  */
 }
 
 .tile {
@@ -88,28 +105,23 @@
     margin-top: 20px;
     padding-top: 10px;
     padding-bottom: 10px; 
-    /* border: 1px solid green;  */
 }
 
-/* select {
-    width: 170px
-} */
 .buttons label {
     margin-left: 40.5%;
-    margin-top: 15px; 
+    margin-top: 18px; 
+    font-size: 15px; 
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: lightgray; 
 }
 
 .selector {
     position: relative; 
     display: flex; 
     justify-content: flex-end; 
-    /* align-items: center; */
-    /* margin-left: 45%; */
 }
 
 select {
-    /* display: flex;  */
-    /* justify-content: flex-end; */
     margin-left: 8px; 
     margin-top: 10px;
     margin-bottom: 12px;
@@ -123,17 +135,31 @@ select:focus {
 .stop-button {
     padding: 10px; 
     font-size: 30px;
+    /* box-shadow: rgb(48, 44, 44) 0px 1px 10px 0px; */
+    box-shadow: rgb(83, 80, 80) 0px 1px 10px 0px;
+
+    margin-right: 5px;
+
 }
 
 .clear-button {
     padding: 10px; 
     font-size: 30px;
+    /* box-shadow: rgb(48, 44, 44) 0px 1px 10px 0px; */
+    box-shadow: rgb(83, 80, 80) 0px 1px 10px 0px;
+
+    margin-right: 5px;
+
 }
 
 .play {
     padding: 10px; 
     font-size: 30px;
     margin-left: 10px;
+    /* box-shadow: rgb(48, 44, 44) 0px 1px 10px 0px; */
+    box-shadow: rgb(83, 80, 80) 0px 1px 10px 0px;
+
+    margin-right: 5px;
 }
 
 button:hover {
@@ -143,12 +169,10 @@ button:hover {
 .board > .tile {
     width: 80px; 
     height: 60px; 
-    /* border: 1px solid lightgray; */
     margin: 0px; 
 }
 
 .staff-starter img {
     width: 60px; 
     height: 60px; 
-    /* border: 1px solid lightgray; */
 }
