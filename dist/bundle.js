@@ -561,6 +561,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const stopButton = document.querySelector('.stop-button');
     stopButton.addEventListener('click', () => {
       tone__WEBPACK_IMPORTED_MODULE_0__.Transport.stop();
+      tone__WEBPACK_IMPORTED_MODULE_0__.Transport.cancel();
     });
   })();
 
@@ -577,6 +578,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     soundArr = [];
+    tone__WEBPACK_IMPORTED_MODULE_0__.Transport.cancel();
   });
   let soundArr = []; // sound when clicking on tiles, push to soundArr
 
@@ -597,10 +599,10 @@ window.addEventListener('DOMContentLoaded', () => {
       const seq = new tone__WEBPACK_IMPORTED_MODULE_0__.Sequence((time, note) => {
         tone__WEBPACK_IMPORTED_MODULE_0__.loaded().then(() => {
           tone__WEBPACK_IMPORTED_MODULE_0__.Transport.bpm.value = 17.5;
-          note.start();
+          note.start(time);
         });
-      }, [...soundArr]).start(0);
-      tone__WEBPACK_IMPORTED_MODULE_0__.Transport.start();
+      }, [...soundArr]).start();
+      tone__WEBPACK_IMPORTED_MODULE_0__.Transport.start(); // seq.start(); 
     });
   })();
 

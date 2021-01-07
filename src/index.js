@@ -9,6 +9,7 @@ window.addEventListener('DOMContentLoaded', () => {
         const stopButton = document.querySelector('.stop-button'); 
         stopButton.addEventListener('click', () => {
             Tone.Transport.stop(); 
+            Tone.Transport.cancel(); 
         })
     })(); 
 
@@ -24,6 +25,7 @@ window.addEventListener('DOMContentLoaded', () => {
             board.removeChild(board.lastChild)
         }
         soundArr = []; 
+        Tone.Transport.cancel(); 
     }); 
 
     let soundArr = [];
@@ -45,10 +47,11 @@ window.addEventListener('DOMContentLoaded', () => {
             const seq = new Tone.Sequence((time, note) => {
                 Tone.loaded().then(() => {
                     Tone.Transport.bpm.value = 17.5;
-                    note.start();
+                    note.start(time);
                 })
-            }, [...soundArr]).start(0); 
+            }, [...soundArr]).start(); 
             Tone.Transport.start();
+            // seq.start(); 
         })
     })();
 
