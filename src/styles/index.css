@@ -1,6 +1,8 @@
-/* .whole-page {
+.whole-page {
     
-} */
+    background-color: black;
+    color: ghostwhite; 
+}
 
 .header-bar {
     display: flex; 
@@ -14,15 +16,18 @@
 .board-parent {
     display: flex; 
     justify-content: center;
+    padding-bottom: 100%;
 }
 
 .board {
     display: flex; 
     flex-direction: row;
+    background-color: rgb(10, 12, 32);
     
     width: 720px;
     height: 60px; 
     border: 1px solid lightgray;
+    border-radius: 8px;
     padding: 20px; 
 }
 
@@ -63,7 +68,7 @@
 .buttons {
     display: flex; 
     justify-content: flex-start;
-    width: 558px; 
+    width: 720px; 
     margin-top: 10px;
     padding-top: 10px;
     padding-bottom: 10px; 
