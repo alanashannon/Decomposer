@@ -27,7 +27,7 @@
         </div>
     
         <div class="tile-outer">
-            <ul id="tile-list">
+            <ul id="tile-list-dvorak" class="tile-list dvorak">
                 <li class="tile" id="tile"><img src="./dist/tile_imgs/dvorak_1.png"></li>
                 <li class="tile" id="tile"><img src="./dist/tile_imgs/dvorak_2.png"></li>
                 <li class="tile" id="tile"><img src="./dist/tile_imgs/dvorak_3.png"></li>
@@ -36,6 +36,16 @@
                 <li class="tile" id="tile"><img src="./dist/tile_imgs/dvorak_6.png"></li>
                 <li class="tile" id="tile"><img src="./dist/tile_imgs/dvorak_7.png"></li>
                 <li class="tile" id="tile"><img src="./dist/tile_imgs/dvorak_8.png"></li>
+            </ul>
+            <ul id="tile-list-test" class="tile-list test">
+                <li class="tile" id="tile">Test1</li>
+                <li class="tile" id="tile">Test2</li>
+                <li class="tile" id="tile">Test3</li>
+                <li class="tile" id="tile">Test4</li>
+                <li class="tile" id="tile">Test5</li>
+                <li class="tile" id="tile">Test6</li>
+                <li class="tile" id="tile">Test7</li>
+                <li class="tile" id="tile">Test8</li>
             </ul>
         </div>
         <div class="button-parent">
@@ -47,13 +57,15 @@
                 <div class="selector">
                     <select class="piece-toggle" id="piece-toggle">
                         <option value="dvorak">Dvorak Symphony No. 9</option>
+                        <option value="test">Test</option>
                     </select>
                 </div>
             </div>
         </div>
         <div class="board-parent">
             <div class="board" id="board">
-                <div class="staff-starter" id="staff-starter"><img src="./dist/tile_imgs/staff_starter.png" alt=""></div>
+                <div class="staff-starter dvorak" id="staff-starter-dvorak"><img src="./dist/tile_imgs/staff_starter.png" alt=""></div>
+                <div class="staff-starter test" id="staff-starter-test">Test Starter</div>
             </div>
         </div>
     </div>

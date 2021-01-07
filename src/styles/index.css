@@ -60,7 +60,21 @@
     padding: 20px; 
 }
 
-#tile-list {
+.tile-list.dvorak {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 410px; 
+    border: 1px solid rgb(36, 35, 35);
+    background-color: rgb(39, 39, 39);
+    box-shadow: rgb(83, 80, 80) 0px 1px 10px 0px;
+/* rgb(48, 44, 44) */
+    border-radius: 8px;
+    padding: 20px; 
+}
+
+.tile-list.test {
     display: flex; 
     justify-content: center;
     align-items: center;
@@ -82,6 +96,11 @@
 .tile img {
     width: 80px; 
     height: 60px; 
+}
+.tile-list.test li {
+    width: 80px; 
+    height: 60px; 
+    border: 1px solid white;
 }
 
 .tile {
@@ -173,6 +192,10 @@ button:hover {
 }
 
 .staff-starter img {
+    width: 60px; 
+    height: 60px; 
+}
+.staff-starter.test {
     width: 60px; 
     height: 60px; 
 }

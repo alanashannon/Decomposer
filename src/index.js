@@ -4,6 +4,34 @@ window.addEventListener('DOMContentLoaded', () => {
     let clonedTiles = document.getElementsByClassName('.cloned-tile');
     const tiles = document.querySelectorAll('.tile');
     const board = document.getElementById('board'); 
+
+    (function setBoard() {
+        const sel = document.getElementById('piece-toggle');
+        let listTest = document.getElementById('tile-list-test'); //TODO every add after, display none in default
+        listTest.style.display = 'none'; 
+        let staffStarterTest = document.getElementById('staff-starter-test'); 
+        staffStarterTest.style.display = 'none'
+
+        sel.addEventListener('change', async () => {
+            const currentSel = sel.value; 
+            
+            if (currentSel === 'test') {
+                let list = document.getElementById('tile-list-dvorak')
+                listTest.style.display = 'inherit' 
+                list.style.display = 'none'
+                staffStarterTest.style.display = 'inherit'; 
+                let staffStarterDvorak = document.getElementById('staff-starter-dvorak'); 
+                staffStarterDvorak.style.display = 'none';
+            } else if (currentSel === 'dvorak') {
+                listTest.style.display = 'none'; 
+                let listDvorak = document.getElementById('tile-list-dvorak')
+                listDvorak.style.display = 'inherit';
+                staffStarterTest.style.display = 'none';
+                let staffStarterDvorak = document.getElementById('staff-starter-dvorak');
+                staffStarterDvorak.style.display = 'inherit';
+            }
+        })
+    })();
     
     (function stopButton() {
         const stopButton = document.querySelector('.stop-button'); 
@@ -17,7 +45,7 @@ window.addEventListener('DOMContentLoaded', () => {
     clearButton.addEventListener('click', async () => {
         tiles.forEach(tile => {
             if (tile.style.visibility === 'hidden') {
-                tile.style.visibility = 'visible'
+                tile.style.visibility = 'visible';
             }
         })
 
@@ -51,12 +79,12 @@ window.addEventListener('DOMContentLoaded', () => {
                 })
             }, [...soundArr]).start(); 
             Tone.Transport.start();
-            // seq.start(); 
         })
     })();
 
     let boardTiles = [];
     (function moveTiles() {
+
         const tiles = document.querySelectorAll('.tile'); 
         // console.log(tiles)
         for (let i = 0; i < tiles.length; i++) {

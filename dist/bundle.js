@@ -557,6 +557,34 @@ window.addEventListener('DOMContentLoaded', () => {
   const tiles = document.querySelectorAll('.tile');
   const board = document.getElementById('board');
 
+  (function setBoard() {
+    const sel = document.getElementById('piece-toggle');
+    let listTest = document.getElementById('tile-list-test'); //TODO every add after, display none in default
+
+    listTest.style.display = 'none';
+    let staffStarterTest = document.getElementById('staff-starter-test');
+    staffStarterTest.style.display = 'none';
+    sel.addEventListener('change', async () => {
+      const currentSel = sel.value;
+
+      if (currentSel === 'test') {
+        let list = document.getElementById('tile-list-dvorak');
+        listTest.style.display = 'inherit';
+        list.style.display = 'none';
+        staffStarterTest.style.display = 'inherit';
+        let staffStarterDvorak = document.getElementById('staff-starter-dvorak');
+        staffStarterDvorak.style.display = 'none';
+      } else if (currentSel === 'dvorak') {
+        listTest.style.display = 'none';
+        let listDvorak = document.getElementById('tile-list-dvorak');
+        listDvorak.style.display = 'inherit';
+        staffStarterTest.style.display = 'none';
+        let staffStarterDvorak = document.getElementById('staff-starter-dvorak');
+        staffStarterDvorak.style.display = 'inherit';
+      }
+    });
+  })();
+
   (function stopButton() {
     const stopButton = document.querySelector('.stop-button');
     stopButton.addEventListener('click', () => {
@@ -602,7 +630,7 @@ window.addEventListener('DOMContentLoaded', () => {
           note.start(time);
         });
       }, [...soundArr]).start();
-      tone__WEBPACK_IMPORTED_MODULE_0__.Transport.start(); // seq.start(); 
+      tone__WEBPACK_IMPORTED_MODULE_0__.Transport.start();
     });
   })();
 
