@@ -74,7 +74,7 @@
     padding: 20px; 
 }
 
-.tile-list.test {
+.tile-list.proko {
     display: flex; 
     justify-content: center;
     align-items: center;
@@ -97,7 +97,7 @@
     width: 80px; 
     height: 60px; 
 }
-.tile-list.test li {
+.tile-list.proko li {
     width: 80px; 
     height: 60px; 
     border: 1px solid white;
@@ -127,7 +127,7 @@
 }
 
 .buttons label {
-    margin-left: 40.5%;
+    margin-left: 38%;
     margin-top: 18px; 
     font-size: 15px; 
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -192,10 +192,6 @@ button:hover {
 }
 
 .staff-starter img {
-    width: 60px; 
-    height: 60px; 
-}
-.staff-starter.test {
     width: 60px; 
     height: 60px; 
 }

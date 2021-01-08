@@ -22,8 +22,9 @@
         </div>
 
         <div class="directions">
-            <h2>Click on the tiles to re-write famous pieces of music</h2>
+            <h2>Click on the notes to re-write famous pieces of music</h2>
             <h2>Play it back to hear it as it's never been heard before!</h2>
+            <h2>Note: If you've never heard the piece before, click from left to right to hear it in order</h2>
         </div>
     
         <div class="tile-outer">
@@ -37,15 +38,15 @@
                 <li class="tile" id="tile"><img src="./dist/tile_imgs/dvorak_7.png"></li>
                 <li class="tile" id="tile"><img src="./dist/tile_imgs/dvorak_8.png"></li>
             </ul>
-            <ul id="tile-list-test" class="tile-list test">
-                <li class="tile" id="tile">Test1</li>
-                <li class="tile" id="tile">Test2</li>
-                <li class="tile" id="tile">Test3</li>
-                <li class="tile" id="tile">Test4</li>
-                <li class="tile" id="tile">Test5</li>
-                <li class="tile" id="tile">Test6</li>
-                <li class="tile" id="tile">Test7</li>
-                <li class="tile" id="tile">Test8</li>
+            <ul id="tile-list-proko" class="tile-list proko">
+                <li class="tile" id="tile"><img src="./dist/tile_imgs/proko_1.png"></li>
+                <li class="tile" id="tile"><img src="./dist/tile_imgs/proko_2.png"></li>
+                <li class="tile" id="tile"><img src="./dist/tile_imgs/proko_3.png"></li>
+                <li class="tile" id="tile"><img src="./dist/tile_imgs/proko_4.png"></li>
+                <li class="tile" id="tile"><img src="./dist/tile_imgs/proko_5.png"></li>
+                <li class="tile" id="tile"><img src="./dist/tile_imgs/proko_6.png"></li>
+                <li class="tile" id="tile"><img src="./dist/tile_imgs/proko_7.png"></li>
+                <li class="tile" id="tile"><img src="./dist/tile_imgs/proko_8.png"></li>
             </ul>
         </div>
         <div class="button-parent">
@@ -57,7 +58,7 @@
                 <div class="selector">
                     <select class="piece-toggle" id="piece-toggle">
                         <option value="dvorak">Dvorak Symphony No. 9</option>
-                        <option value="test">Test</option>
+                        <option value="proko">Prokofiev Peter and the Wolf</option>
                     </select>
                 </div>
             </div>
@@ -65,7 +66,7 @@
         <div class="board-parent">
             <div class="board" id="board">
                 <div class="staff-starter dvorak" id="staff-starter-dvorak"><img src="./dist/tile_imgs/staff_starter.png" alt=""></div>
-                <div class="staff-starter test" id="staff-starter-test">Test Starter</div>
+                <div class="staff-starter proko" id="staff-starter-proko"><img src="./dist/tile_imgs/proko_starter.png" alt=""></div>
             </div>
         </div>
     </div>

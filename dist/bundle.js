@@ -556,29 +556,33 @@ window.addEventListener('DOMContentLoaded', () => {
   let clonedTiles = document.getElementsByClassName('.cloned-tile');
   const tiles = document.querySelectorAll('.tile');
   const board = document.getElementById('board');
+  const sel = document.getElementById('piece-toggle'); // console.log(tiles);
 
   (function setBoard() {
-    const sel = document.getElementById('piece-toggle');
-    let listTest = document.getElementById('tile-list-test'); //TODO every add after, display none in default
+    let listProko = document.getElementById('tile-list-proko');
+    listProko.style.display = 'none';
+    let staffStarterProko = document.getElementById('staff-starter-proko');
 
-    listTest.style.display = 'none';
-    let staffStarterTest = document.getElementById('staff-starter-test');
-    staffStarterTest.style.display = 'none';
+    if (sel.value === 'dvorak') {
+      staffStarterProko.style.display = 'none'; //TODO every add after, display none in default
+    }
+
     sel.addEventListener('change', async () => {
       const currentSel = sel.value;
+      console.log(currentSel);
 
-      if (currentSel === 'test') {
+      if (currentSel === 'proko') {
         let list = document.getElementById('tile-list-dvorak');
-        listTest.style.display = 'inherit';
+        listProko.style.display = 'inherit';
         list.style.display = 'none';
-        staffStarterTest.style.display = 'inherit';
+        staffStarterProko.style.display = 'inherit';
         let staffStarterDvorak = document.getElementById('staff-starter-dvorak');
         staffStarterDvorak.style.display = 'none';
       } else if (currentSel === 'dvorak') {
-        listTest.style.display = 'none';
+        listProko.style.display = 'none';
         let listDvorak = document.getElementById('tile-list-dvorak');
         listDvorak.style.display = 'inherit';
-        staffStarterTest.style.display = 'none';
+        staffStarterProko.style.display = 'none';
         let staffStarterDvorak = document.getElementById('staff-starter-dvorak');
         staffStarterDvorak.style.display = 'inherit';
       }
@@ -599,9 +603,9 @@ window.addEventListener('DOMContentLoaded', () => {
       if (tile.style.visibility === 'hidden') {
         tile.style.visibility = 'visible';
       }
-    });
+    }); //TODO adjust length as more staff starters get added
 
-    while (board.childNodes.length > 3) {
+    while (board.childNodes.length > 5) {
       board.removeChild(board.lastChild);
     }
 
@@ -613,7 +617,10 @@ window.addEventListener('DOMContentLoaded', () => {
   (function populateSoundArr() {
     for (let i = 0; i < tiles.length; i++) {
       tiles[i].addEventListener('click', async () => {
-        let sound = new tone__WEBPACK_IMPORTED_MODULE_0__.Player(`./dist/dvorak/sample_0${i + 1}.wav`).toDestination();
+        let currentSel = sel.value;
+        console.log(currentSel);
+        let sound = new tone__WEBPACK_IMPORTED_MODULE_0__.Player(`./dist/${currentSel}/sample_0${i + 1}.wav`).toDestination();
+        console.log(sound);
         tone__WEBPACK_IMPORTED_MODULE_0__.loaded().then(() => {
           sound.start();
           soundArr.push(sound);
@@ -624,9 +631,15 @@ window.addEventListener('DOMContentLoaded', () => {
 
   (function playSoundArr() {
     document.querySelector('.play').addEventListener('click', async () => {
+      let currentSel = sel.value;
       const seq = new tone__WEBPACK_IMPORTED_MODULE_0__.Sequence((time, note) => {
         tone__WEBPACK_IMPORTED_MODULE_0__.loaded().then(() => {
-          tone__WEBPACK_IMPORTED_MODULE_0__.Transport.bpm.value = 18;
+          if (currentSel === "dvorak") {
+            tone__WEBPACK_IMPORTED_MODULE_0__.Transport.bpm.value = 18; //TODO Add specific bpm for each piece
+          } else if (currentSel === "proko") {
+            tone__WEBPACK_IMPORTED_MODULE_0__.Transport.bpm.value = 12.5;
+          }
+
           note.start(time);
         });
       }, [...soundArr]).start();
