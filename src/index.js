@@ -9,13 +9,19 @@ window.addEventListener('DOMContentLoaded', () => {
 
     (function setBoard() {
         let listProko = document.getElementById('tile-list-proko'); 
-        listProko.style.display = 'none'; 
+        listProko.style.display = 'none';
         let staffStarterProko = document.getElementById('staff-starter-proko'); 
         if (sel.value === 'dvorak') {
             staffStarterProko.style.display = 'none' //TODO every add after, display none in default
         }
-
+        
         sel.addEventListener('change', async () => {
+            while (board.childNodes.length > 5) {
+                board.removeChild(board.lastChild)
+            }
+            soundArr = [];
+            Tone.Transport.cancel();
+
             const currentSel = sel.value; 
             console.log(currentSel); 
             if (currentSel === 'proko') {

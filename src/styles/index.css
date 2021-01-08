@@ -156,9 +156,10 @@ select:focus {
     font-size: 30px;
     /* box-shadow: rgb(48, 44, 44) 0px 1px 10px 0px; */
     box-shadow: rgb(83, 80, 80) 0px 1px 10px 0px;
-
     margin-right: 5px;
-
+}
+.stop-button:hover {
+    background-color: rgb(39, 39, 39);
 }
 
 .clear-button {
@@ -166,9 +167,10 @@ select:focus {
     font-size: 30px;
     /* box-shadow: rgb(48, 44, 44) 0px 1px 10px 0px; */
     box-shadow: rgb(83, 80, 80) 0px 1px 10px 0px;
-
     margin-right: 5px;
-
+}
+.clear-button:hover {
+    background-color: rgb(39, 39, 39);
 }
 
 .play {
@@ -177,8 +179,10 @@ select:focus {
     margin-left: 10px;
     /* box-shadow: rgb(48, 44, 44) 0px 1px 10px 0px; */
     box-shadow: rgb(83, 80, 80) 0px 1px 10px 0px;
-
     margin-right: 5px;
+}
+.play:hover {
+    background-color: rgb(39, 39, 39);
 }
 
 button:hover {

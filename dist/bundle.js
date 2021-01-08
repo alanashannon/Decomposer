@@ -568,6 +568,12 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     sel.addEventListener('change', async () => {
+      while (board.childNodes.length > 5) {
+        board.removeChild(board.lastChild);
+      }
+
+      soundArr = [];
+      tone__WEBPACK_IMPORTED_MODULE_0__.Transport.cancel();
       const currentSel = sel.value;
       console.log(currentSel);
 
