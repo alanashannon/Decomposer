@@ -568,6 +568,12 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     sel.addEventListener('change', async () => {
+      tiles.forEach(tile => {
+        if (tile.style.visibility === 'hidden') {
+          tile.style.visibility = 'visible';
+        }
+      });
+
       while (board.childNodes.length > 5) {
         board.removeChild(board.lastChild);
       }
