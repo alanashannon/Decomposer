@@ -28,7 +28,7 @@ window.addEventListener('DOMContentLoaded', () => {
             Tone.Transport.cancel();
 
             const currentSel = sel.value; 
-            console.log(currentSel); 
+            // console.log(currentSel); 
             if (currentSel === 'proko') {
                 let list = document.getElementById('tile-list-dvorak')
                 listProko.style.display = 'inherit'; 
@@ -79,7 +79,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 let currentSel = sel.value; 
                 console.log(currentSel)
                 let sound = new Tone.Player(`./dist/${currentSel}/sample_0${i+1}.wav`).toDestination();
-                console.log(sound)
+                // console.log(sound)
                 Tone.loaded().then(() => {
                     sound.start();
                     soundArr.push(sound);
@@ -115,7 +115,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 tiles[i].style.visibility = 'hidden'; 
                 let chosenTile = document.getElementsByClassName('tile')[i];
                 const clone = chosenTile.cloneNode(true); 
-                console.log(chosenTile) 
+                // console.log(chosenTile) 
                 clone.classList.add('cloned-tile')
                 document.getElementById('board').appendChild(clone);
                 clone.style.visibility = 'visible';
@@ -128,11 +128,11 @@ window.addEventListener('DOMContentLoaded', () => {
 
     (function moveTileOffBoard() {
         // let clonedTiles = document.getElementsByClassName('cloned-tile')
-        console.log(clonedTiles)
+        // console.log(clonedTiles)
         for (let i = 0; i < clonedTiles.length; i++) {
             clonedTiles[i].addEventListener('click', async () => {
                 tiles.forEach((tile, j) =>{
-                    console.log(tile)
+                    // console.log(tile)
                     if (clonedTiles[i].innerHTML === tile.textContent.toString()) {
                         clonedTiles[i].style.visibility = 'hidden'; 
                         tile.style.visibility = 'visible'; 
