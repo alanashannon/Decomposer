@@ -77,7 +77,7 @@ window.addEventListener('DOMContentLoaded', () => {
         for (let i = 0; i < tiles.length; i++) {
             tiles[i].addEventListener('click', async () => {
                 let currentSel = sel.value; 
-                console.log(currentSel)
+                // console.log(currentSel)
                 let sound = new Tone.Player(`./dist/${currentSel}/sample_0${i+1}.wav`).toDestination();
                 // console.log(sound)
                 Tone.loaded().then(() => {
