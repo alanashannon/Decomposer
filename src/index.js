@@ -5,7 +5,6 @@ window.addEventListener('DOMContentLoaded', () => {
     const tiles = document.querySelectorAll('.tile');
     const board = document.getElementById('board'); 
     const sel = document.getElementById('piece-toggle');
-    // console.log(tiles);
 
     (function setBoard() {
         let listProko = document.getElementById('tile-list-proko'); 
@@ -28,7 +27,6 @@ window.addEventListener('DOMContentLoaded', () => {
             Tone.Transport.cancel();
 
             const currentSel = sel.value; 
-            // console.log(currentSel); 
             if (currentSel === 'proko') {
                 let list = document.getElementById('tile-list-dvorak')
                 listProko.style.display = 'inherit'; 
@@ -77,9 +75,9 @@ window.addEventListener('DOMContentLoaded', () => {
         for (let i = 0; i < tiles.length; i++) {
             tiles[i].addEventListener('click', async () => {
                 let currentSel = sel.value; 
-                // console.log(currentSel)
+                
                 let sound = new Tone.Player(`./dist/${currentSel}/sample_0${i+1}.wav`).toDestination();
-                // console.log(sound)
+             
                 Tone.loaded().then(() => {
                     sound.start();
                     soundArr.push(sound);
@@ -109,19 +107,17 @@ window.addEventListener('DOMContentLoaded', () => {
     (function moveTiles() {
 
         const tiles = document.querySelectorAll('.tile'); 
-        // console.log(tiles)
+       
         for (let i = 0; i < tiles.length; i++) {
             tiles[i].addEventListener('click', async () => {
                 tiles[i].style.visibility = 'hidden'; 
                 let chosenTile = document.getElementsByClassName('tile')[i];
                 const clone = chosenTile.cloneNode(true); 
-                // console.log(chosenTile) 
+               
                 clone.classList.add('cloned-tile')
                 document.getElementById('board').appendChild(clone);
                 clone.style.visibility = 'visible';
                 boardTiles.push(clone);
-                // console.log(boardTiles)
-                // console.log(board)
             })
         }
     })();
