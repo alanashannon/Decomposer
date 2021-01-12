@@ -556,7 +556,7 @@ window.addEventListener('DOMContentLoaded', () => {
   let clonedTiles = document.getElementsByClassName('.cloned-tile');
   const tiles = document.querySelectorAll('.tile');
   const board = document.getElementById('board');
-  const sel = document.getElementById('piece-toggle'); // console.log(tiles);
+  const sel = document.getElementById('piece-toggle');
 
   (function setBoard() {
     let listProko = document.getElementById('tile-list-proko');
@@ -581,7 +581,6 @@ window.addEventListener('DOMContentLoaded', () => {
       soundArr = [];
       tone__WEBPACK_IMPORTED_MODULE_0__.Transport.cancel();
       const currentSel = sel.value;
-      console.log(currentSel);
 
       if (currentSel === 'proko') {
         let list = document.getElementById('tile-list-dvorak');
@@ -630,9 +629,7 @@ window.addEventListener('DOMContentLoaded', () => {
     for (let i = 0; i < tiles.length; i++) {
       tiles[i].addEventListener('click', async () => {
         let currentSel = sel.value;
-        console.log(currentSel);
         let sound = new tone__WEBPACK_IMPORTED_MODULE_0__.Player(`./dist/${currentSel}/sample_0${i + 1}.wav`).toDestination();
-        console.log(sound);
         tone__WEBPACK_IMPORTED_MODULE_0__.loaded().then(() => {
           sound.start();
           soundArr.push(sound);
@@ -662,32 +659,28 @@ window.addEventListener('DOMContentLoaded', () => {
   let boardTiles = [];
 
   (function moveTiles() {
-    const tiles = document.querySelectorAll('.tile'); // console.log(tiles)
+    const tiles = document.querySelectorAll('.tile');
 
     for (let i = 0; i < tiles.length; i++) {
       tiles[i].addEventListener('click', async () => {
         tiles[i].style.visibility = 'hidden';
         let chosenTile = document.getElementsByClassName('tile')[i];
         const clone = chosenTile.cloneNode(true);
-        console.log(chosenTile);
         clone.classList.add('cloned-tile');
         document.getElementById('board').appendChild(clone);
         clone.style.visibility = 'visible';
-        boardTiles.push(clone); // console.log(boardTiles)
-        // console.log(board)
+        boardTiles.push(clone);
       });
     }
   })();
 
   (function moveTileOffBoard() {
     // let clonedTiles = document.getElementsByClassName('cloned-tile')
-    console.log(clonedTiles);
-
+    // console.log(clonedTiles)
     for (let i = 0; i < clonedTiles.length; i++) {
       clonedTiles[i].addEventListener('click', async () => {
         tiles.forEach((tile, j) => {
-          console.log(tile);
-
+          // console.log(tile)
           if (clonedTiles[i].innerHTML === tile.textContent.toString()) {
             clonedTiles[i].style.visibility = 'hidden';
             tile.style.visibility = 'visible';
