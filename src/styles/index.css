@@ -5,12 +5,21 @@
 /* rgb(10, 12, 32) */
 .header-bar {
     display: flex; 
-    justify-content: center;
+    justify-content: space-evenly;
+    align-items: center;
     border-bottom: 1px solid rgb(20, 20, 20);
     padding-top: 20px;
     padding-bottom: 20px;
     margin-bottom: 50px;
     background-color: rgb(39, 39, 39);
+}
+
+.filler {
+    width: 130px; 
+}
+
+.header-logo {
+    margin: auto;
 }
 
 .header-bar .header-first {
@@ -23,6 +32,16 @@
     font-family: 'Pirata One', cursive;
     font-size: 35px;
     color: gray; 
+}
+
+.about-container {
+    padding-right: 10px;
+}
+
+.about-links {
+    font-size: 30px;
+    color: gray; 
+    padding: 5px; 
 }
 
 .directions  {
