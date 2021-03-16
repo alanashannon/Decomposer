@@ -2,7 +2,7 @@
     background-color: rgb(26, 27, 31);
     color: ghostwhite; 
 }
-/* rgb(10, 12, 32) */
+
 .header-bar {
     display: flex; 
     justify-content: space-evenly;
@@ -88,7 +88,6 @@
     border: 1px solid rgb(36, 35, 35);
     background-color: rgb(39, 39, 39);
     box-shadow: rgb(83, 80, 80) 0px 1px 10px 0px;
-/* rgb(48, 44, 44) */
     border-radius: 8px;
     padding: 20px; 
 }
@@ -102,7 +101,6 @@
     border: 1px solid rgb(36, 35, 35);
     background-color: rgb(39, 39, 39);
     box-shadow: rgb(83, 80, 80) 0px 1px 10px 0px;
-/* rgb(48, 44, 44) */
     border-radius: 8px;
     padding: 20px; 
 }
@@ -180,7 +178,7 @@ input[type=range]::-webkit-slider-thumb {
   border-radius: 3px;
   background: white;
   cursor: pointer;
-  margin-top: -2px; 
+  margin-top: -3px; 
   box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; 
 }
 
@@ -287,7 +285,6 @@ select:focus {
 .stop-button {
     padding: 10px; 
     font-size: 30px;
-    /* box-shadow: rgb(48, 44, 44) 0px 1px 10px 0px; */
     box-shadow: rgb(83, 80, 80) 0px 1px 10px 0px;
     margin-right: 5px;
 }
@@ -298,7 +295,6 @@ select:focus {
 .clear-button {
     padding: 10px; 
     font-size: 30px;
-    /* box-shadow: rgb(48, 44, 44) 0px 1px 10px 0px; */
     box-shadow: rgb(83, 80, 80) 0px 1px 10px 0px;
     margin-right: 5px;
 }
@@ -310,7 +306,6 @@ select:focus {
     padding: 10px; 
     font-size: 30px;
     margin-left: 10px;
-    /* box-shadow: rgb(48, 44, 44) 0px 1px 10px 0px; */
     box-shadow: rgb(83, 80, 80) 0px 1px 10px 0px;
     margin-right: 5px;
 }
