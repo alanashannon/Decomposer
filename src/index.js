@@ -69,6 +69,7 @@ window.addEventListener('DOMContentLoaded', () => {
         Tone.Transport.cancel(); 
     }); 
 
+    const volume = document.body.querySelector(".volume");
     let soundArr = [];
     // sound when clicking on tiles, push to soundArr
     (function populateSoundArr() {
@@ -77,6 +78,11 @@ window.addEventListener('DOMContentLoaded', () => {
                 let currentSel = sel.value; 
                 
                 let sound = new Tone.Player(`./dist/${currentSel}/sample_0${i+1}.wav`).toDestination();
+
+                volume.addEventListener('change', (e) => {
+                    console.log(e.target.value)
+                    sound.volume.input.value = (e.target.value);
+                })
              
                 Tone.loaded().then(() => {
                     sound.start();
@@ -100,6 +106,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 })
             }, [...soundArr]).start(); 
             Tone.Transport.start();
+
         })
     })();
 
@@ -142,10 +149,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
     // document.querySelector('.board').addEventListener('click', async () => {
     //     console.log('click on board')
-
-
     // })
 
 
     
-})
+});

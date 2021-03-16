@@ -623,6 +623,7 @@ window.addEventListener('DOMContentLoaded', () => {
     soundArr = [];
     tone__WEBPACK_IMPORTED_MODULE_0__.Transport.cancel();
   });
+  const volume = document.body.querySelector(".volume");
   let soundArr = []; // sound when clicking on tiles, push to soundArr
 
   (function populateSoundArr() {
@@ -630,6 +631,10 @@ window.addEventListener('DOMContentLoaded', () => {
       tiles[i].addEventListener('click', async () => {
         let currentSel = sel.value;
         let sound = new tone__WEBPACK_IMPORTED_MODULE_0__.Player(`./dist/${currentSel}/sample_0${i + 1}.wav`).toDestination();
+        volume.addEventListener('change', e => {
+          console.log(e.target.value);
+          sound.volume.input.value = e.target.value;
+        });
         tone__WEBPACK_IMPORTED_MODULE_0__.loaded().then(() => {
           sound.start();
           soundArr.push(sound);
